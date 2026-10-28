@@ -1438,7 +1438,6 @@ html {
 }
 
 body {
-  padding-top: var(--altura-cabecalho);
   overflow-wrap: break-word;
 }
 
@@ -1990,4 +1989,168 @@ main.pagina .refs p {
     .projeto-citacao {
         margin-top: 8px;
     }
+}
+
+
+/* CORREÇÕES FINAIS: cabeçalho e rodapé responsivos */
+header.site-header {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: 1000;
+}
+html { scroll-padding-top: 24px; }
+
+@media (max-width: 760px) {
+  header.site-header {
+    width: 100%;
+    overflow: visible;
+  }
+  header.site-header .topbar {
+    min-height: 94px;
+    padding: 14px 76px 14px 18px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  header.site-header .brand {
+    max-width: 100%;
+    gap: 10px;
+  }
+  header.site-header .brand-eco {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+  }
+  header.site-header .brand-name {
+    font-size: 1.75rem;
+    line-height: 1.05;
+  }
+  header.site-header .brand-name small {
+    display: block;
+    font-size: .52rem;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+  }
+  header.site-header .menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+  header.site-header nav.menu {
+    display: none;
+    padding: 8px 16px 14px;
+  }
+  header.site-header nav.menu.menu-aberto {
+    display: flex;
+  }
+  .hero-ini {
+    min-height: 0;
+    padding: 48px 20px;
+    background-position: center;
+  }
+  .hero-ini h1 {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    overflow-wrap: break-word;
+  }
+
+  /* Rodapé compacto no celular */
+  .rodape {
+    margin-top: 30px;
+    padding: 0;
+    border-top-width: 3px;
+  }
+  .rodape-in {
+    width: calc(100% - 40px);
+    padding: 26px 0 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 18px;
+  }
+  .rodape-marca {
+    grid-column: 1 / -1;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  .rodape-brand .brand-eco {
+    width: 48px;
+    height: 48px;
+  }
+  .rodape-brand .brand-name {
+    font-size: 1.55rem;
+  }
+  .rodape-brand .brand-name small {
+    font-size: .48rem;
+    letter-spacing: 1.3px;
+  }
+  .rodape-marca p,
+  .rodape-social p {
+    font-size: .88rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .rodape-coluna {
+    gap: 7px;
+    min-width: 0;
+  }
+  .rodape-coluna h2,
+  .rodape-social h2 {
+    font-size: .96rem;
+    margin-bottom: 3px;
+  }
+  .rodape-coluna a,
+  .rodape-coluna span {
+    font-size: .84rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .rodape-social {
+    grid-column: 1 / -1;
+    align-items: center;
+    gap: 9px;
+  }
+  .instagram-link {
+    padding: 10px 15px;
+    font-size: .86rem;
+  }
+}
+@media (max-width: 380px) {
+  header.site-header .brand-eco {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+  header.site-header .brand-name {
+    font-size: 1.5rem;
+  }
+  header.site-header .brand-name small {
+    font-size: .45rem;
+    letter-spacing: 1px;
+  }
+  .rodape-in {
+    width: calc(100% - 32px);
+    gap: 20px 12px;
+  }
+  .rodape-coluna a {
+    font-size: .8rem;
+  }
+}
+
+/* Centralização consistente dos nomes na página da equipe */
+.pessoa h3 {
+  text-align: center;
+  text-wrap: balance;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pessoa .avatar-foto,
+.pessoa .pessoa-iniciais {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
