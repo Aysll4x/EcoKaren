@@ -4464,3 +4464,9 @@ html {
     margin-left: auto;
     margin-right: auto;
 }
+
+@media (max-width: 760px){
+    body {
+        padding-top: 95px !important;
+    }
+}
